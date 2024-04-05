@@ -12,6 +12,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use("/api/todos", todoRouter)
 
+app.get("/",(req,res)=>{
+    res.send("TODO BACKEND WORKING.")   
+})
+
 
 try {
     const conn = await mongoose.connect(process.env.MONGO_URL);
